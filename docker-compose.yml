@@ -1,0 +1,16 @@
+version: "3"
+services:
+    mongo:
+        image: mongo
+        expose: 
+            - "27017"
+    acl-example:
+        image: acl-example
+        environment:
+            - JWT_PASSWORD=A4F4A9E6-50C5-4E7A-92A4-BA1230A9C945
+        expose: 
+            - "5000"
+        ports: 
+            - "5000:5000"
+        depends_on: 
+            - mongo
